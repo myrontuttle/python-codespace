@@ -3,7 +3,18 @@
 {
 	"name": "Python 3",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/python:0-3.11",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "..",
+		"args": {
+			// Update 'VARIANT' to pick a Python version: 3, 3.10, 3.9, 3.8, 3.7, 3.6
+			// Append -bullseye or -buster to pin to an OS version.
+			// Use -bullseye variants on local on arm64/Apple Silicon.
+			"VARIANT": "3.11",
+			// Options
+			"NODE_VERSION": "none"
+		}
+	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {},
@@ -11,8 +22,8 @@
 		"ghcr.io/devcontainers-contrib/features/copier:7": {},
 		"ghcr.io/devcontainers-contrib/features/pdm:2": {},
 		"ghcr.io/devcontainers/features/sshd:1": {
-            "version": "latest"
-        }
+			"version": "latest"
+		}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
