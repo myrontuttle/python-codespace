@@ -20,7 +20,6 @@
 		"ghcr.io/devcontainers/features/git:1": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/devcontainers-contrib/features/copier:7": {},
-		"ghcr.io/devcontainers-contrib/features/pdm:2": {},
 		"ghcr.io/devcontainers/features/sshd:1": {
 			"version": "latest"
 		}
